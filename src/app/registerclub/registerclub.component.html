@@ -1,0 +1,58 @@
+<div class="main">
+
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+
+                <div class="signup-form">
+                    <h2 class="form-title">Register as a College social welfare club </h2>
+                    <form class="register-form" id="register-form" [formGroup]="formregisterclub">
+
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clg_name"><i class="zmdi zmdi-account "></i></label>
+                            <input type="text" name="clg_name" id="clg_name" placeholder="College Name" formControlName="collgename"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="club_name"><i class="zmdi zmdi-account "></i></label>
+                            <input type="text" name="club_name" id="club_name" placeholder="College social welfare club Name" formControlName="College_social_welfare_club_Name"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact"><i class="zmdi zmdi-account "></i></label>
+                            <input type="tel" name="contact no" id="contact no" placeholder="Contact Number" formControlName="contact"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address"><i class="zmdi zmdi-account "></i></label>
+                            <input type="address" name="address" id="address" placeholder="Address" formControlName="address"/>
+                        </div>
+
+                        <mat-form-field>
+                            <mat-label style="font-size: 100%">
+                                State
+                            </mat-label>
+                            <mat-select [(value)]="state" class="zmdi zmdi-account" style="font-size: 100%; border-bottom: none">
+                                <div *ngFor="let s of states">
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                </div>
+                            </mat-select>
+                        </mat-form-field>
+               
+                        <div (click)="submit()" class="form-group form-button">
+                            submit
+                        </div>
+                    
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+   </div>

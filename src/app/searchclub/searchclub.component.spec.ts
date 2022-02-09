@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisternNgoComponent } from './registern-ngo.component';
+import { SearchclubComponent } from './searchclub.component';
 
-describe('RegisternNgoComponent', () => {
-  let component: RegisternNgoComponent;
-  let fixture: ComponentFixture<RegisternNgoComponent>;
+describe('SearchclubComponent', () => {
+  let component: SearchclubComponent;
+  let fixture: ComponentFixture<SearchclubComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisternNgoComponent ]
+      declarations: [ SearchclubComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisternNgoComponent);
+    fixture = TestBed.createComponent(SearchclubComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

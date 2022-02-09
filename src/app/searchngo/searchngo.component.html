@@ -1,0 +1,46 @@
+
+<div class="main">
+    <div class="header">
+        <div class="searchandfilter">
+            <mat-form-field>
+                <mat-label style="font-size: 100%">
+                    State
+                </mat-label>
+                <mat-select [(value)]="selectedstate" style="font-size: 100%; border-bottom: none">
+                    <div class="zmdi zmdi-account" *ngFor="let s of states">
+                        <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                            {{ s.payload.doc.data().Name }}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+
+
+
+            <button (click)="getfilterngos()"> filter</button>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card" *ngFor="let ngo of ngos">
+
+            
+    
+                <div class="title">
+                    <a> NGO Name</a>
+                    <div>{{ngo.payload.doc.data().name}}</div>
+                </div>
+                
+                <div class="title">
+                    <a> NGO State</a>
+                    <div>{{ngo.payload.doc.data().name}}</div>
+                </div>
+
+                <div class="title">
+                    <a> NGO Email</a>
+                    <div>{{ngo.payload.doc.data().name}}</div>
+                </div>
+    
+           
+    
+        </div>
+    </div>
+</div>
