@@ -1,24 +1,51 @@
+<div class="main">
+    <div class="header">
+        <div class="searchandfilter">
+            <mat-form-field>
+                <mat-label style="font-size: 100%">
+                    State
+                </mat-label>
+                <mat-select [(value)]="selectedstate" style="font-size: 100%; border-bottom: none">
+                    <div class="zmdi zmdi-account" *ngFor="let s of state">
+                        <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                            {{ s.payload.doc.data().Name }}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
 
 
-<body>
 
-    <div class="main">
-        <div class="wrap">
-            
-        </div>
-        <!--cards -->
-
-        <div class="card" *ngFor="let club of club">
-
-            <div class="title">
-                <a> College Club Name</a> 
-                <div>{{club.payload.doc.data().name}}</div>
-            </div>
-            
-            <div class="title">
-                <a> College State</a> 
-                <div>{{club.payload.doc.data().address}}</div>
-            </div>
+            <button (click)="getfilterclub()"> filter</button>
         </div>
     </div>
-</body>
+    <div class="cards">
+        <div class="card" *ngFor="let club of club">
+
+
+
+            <div class="title">
+                <a> Email</a>
+                <div>{{club.payload.doc.data().email}}</div>
+            </div>
+            <div class="title">
+                <a> College Name</a>
+                <div>{{club.payload.doc.data().collgename}}</div>
+            </div>
+            <div class="title">
+                <a> College Club Name</a>
+                <div>{{club.payload.doc.data().College_social_welfare_club_Name}}</div>
+            </div>
+            <div class="title">
+                <a> Contact</a>
+                <div>{{club.payload.doc.data().contact}}</div>
+            </div>
+
+            <div class="title">
+                <a> address</a>
+                <div>{{club.payload.doc.data().address}}</div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

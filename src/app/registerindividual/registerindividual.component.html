@@ -1,62 +1,71 @@
+<div class="main">
 
-    <div class="main">
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
 
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
 
-                   
 
-                    <div class="signup-form">
-                        <h2 class="form-title">Register as an Individual </h2>
-                        <form  class="register-form" id="register-form" [formGroup]="formregisterindividual" >
+                <div class="signup-form">
+                    <h2 class="form-title">Register as an Individual </h2>
+                    <form class="register-form" id="register-form" [formGroup]="formregisterindividual">
 
-                            <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account "></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name" formControlName="name"/>
-                            </div>
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account "></i></label>
+                            <input type="text" name="your_name" id="your_name" placeholder="Your Name" formControlName="name" />
+                        </div>
 
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email"/>
-                            </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email" />
+                        </div>
 
-                            <div class="form-group">
-                                <label for="contact"><i class="zmdi zmdi-account "></i></label>
-                                <input type="tel" name="contact no" id="contact no" placeholder="Contact Number" formControlName="contact"/>
-                            </div>
+                        <div class="form-group">
+                            <label for="contact"><i class="zmdi zmdi-account "></i></label>
+                            <input type="tel" name="contact no" id="contact no" placeholder="Contact Number" formControlName="contact" />
+                        </div>
 
-                            <div class="form-group">
-                                <label for="address"><i class="zmdi zmdi-account "></i></label>
-                                <input type="address" name="address" id="address" placeholder="Address" formControlName="address"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="donate/volunteer"><i class="zmdi zmdi-account "></i></label>
-                                <input type="address" name="address" id="address" placeholder="donate/volunteer" formControlName="donateorvolunteer"/>
-                            </div>
-                           
+                        <div class="form-group">
+                            <label for="address"><i class="zmdi zmdi-account "></i></label>
+                            <input type="address" name="address" id="address" placeholder="Address" formControlName="address" />
+                        </div>
+                        <div class="form-group">
+                            <label for="donate/volunteer"><i class="zmdi zmdi-account "></i></label>
+                            <input type="address" name="address" id="address" placeholder="donate/volunteer" formControlName="donateorvolunteer" />
+                        </div>
 
-                            <mat-form-field>
-                                <mat-label style="font-size: 100%">
-                                    State
-                                </mat-label>
-                                <mat-select [(value)]="state" class="zmdi zmdi-account" style="font-size: 100%; border-bottom: none">
-                                    <div *ngFor="let s of states">
-                                        <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
-                                            {{ s.payload.doc.data().Name }}</mat-option>
-                                    </div>
-                                </mat-select>
-                            </mat-form-field>
-                   
-                            <div (click)="submit()" class="form-group form-button">
-                                submit
-                            </div>
-                            
-                        
-                        </form>
-                    </div>
-                    
+
+                        <mat-form-field>
+                            <mat-label style="font-size: 100%">
+                                State
+                            </mat-label>
+                            <mat-select [(value)]="state" class="zmdi zmdi-account" style="font-size: 100%; border-bottom: none">
+                                <div *ngFor="let s of states">
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                        {{ s.payload.doc.data().Name }}</mat-option>
+                                </div>
+
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div (click)="submit()" class="form-group form-button">
+                            submit
+                        </div>
+
+
+                    </form>
                 </div>
-            </div>
-        </section>
 
+            </div>
+        </div>
+    </section>

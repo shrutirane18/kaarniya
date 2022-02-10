@@ -10,49 +10,66 @@
 
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email"/>
+                            <input type="email" name="email" id="email" placeholder="Your Email"
+                                formControlName="email" />
                         </div>
 
                         <div class="form-group">
                             <label for="clg_name"><i class="zmdi zmdi-account "></i></label>
-                            <input type="text" name="clg_name" id="clg_name" placeholder="College Name" formControlName="collgename"/>
+                            <input type="text" name="clg_name" id="clg_name" placeholder="College Name"
+                                formControlName="collgename" />
                         </div>
 
                         <div class="form-group">
                             <label for="club_name"><i class="zmdi zmdi-account "></i></label>
-                            <input type="text" name="club_name" id="club_name" placeholder="College social welfare club Name" formControlName="College_social_welfare_club_Name"/>
+                            <input type="text" name="club_name" id="club_name"
+                                placeholder="College social welfare club Name"
+                                formControlName="College_social_welfare_club_Name" />
                         </div>
 
                         <div class="form-group">
                             <label for="contact"><i class="zmdi zmdi-account "></i></label>
-                            <input type="tel" name="contact no" id="contact no" placeholder="Contact Number" formControlName="contact"/>
+                            <input type="tel" name="contact no" id="contact no" placeholder="Contact Number"
+                                formControlName="contact" />
                         </div>
 
                         <div class="form-group">
                             <label for="address"><i class="zmdi zmdi-account "></i></label>
-                            <input type="address" name="address" id="address" placeholder="Address" formControlName="address"/>
+                            <input type="address" name="address" id="address" placeholder="Address"
+                                formControlName="address" />
                         </div>
 
                         <mat-form-field>
                             <mat-label style="font-size: 100%">
                                 State
                             </mat-label>
-                            <mat-select [(value)]="state" class="zmdi zmdi-account" style="font-size: 100%; border-bottom: none">
+                            <mat-select [(value)]="state" class="zmdi zmdi-account"
+                                style="font-size: 100%; border-bottom: none">
                                 <div *ngFor="let s of states">
+                                    <mat-option value="{{ s.payload.doc.data().email}}" class="options">
+                                        {{ s.payload.doc.data().email }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().collgename}}" class="options">
+                                        {{ s.payload.doc.data().collgename }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().College_social_welfare_club_Name}}" class="options">
+                                        {{ s.payload.doc.data().College_social_welfare_club_Name }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().contact}}" class="options">
+                                        {{ s.payload.doc.data().contact }}</mat-option>
+                                    <mat-option value="{{ s.payload.doc.data().address}}" class="options">
+                                        {{ s.payload.doc.data().address }}</mat-option>
                                     <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
                                         {{ s.payload.doc.data().Name }}</mat-option>
                                 </div>
                             </mat-select>
                         </mat-form-field>
-               
+
                         <div (click)="submit()" class="form-group form-button">
                             submit
                         </div>
-                    
+
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </section>
-   </div>
+</div>

@@ -11,9 +11,13 @@ export class SearchuserComponent implements OnInit {
 
   constructor(private db: AngularFirestore, private router:Router) { }
   user: any;
+  selectedstate: any;
+  states:any;
+
 
   ngOnInit(): void {
     this. getuser();
+    this.getstates();
   }
   getuser(){
     this.db.collection("individual").snapshotChanges().subscribe(res =>{
@@ -22,5 +26,15 @@ export class SearchuserComponent implements OnInit {
 
     })
   }
+  getfilterindividual(){
+    this.db.collection("individual",ref=>ref.where("state","==",this.selectedstate)).snapshotChanges().subscribe(res =>{
+      this.user =res;
+      console.log(this.user);})
+  }
 
+getstates() {
+  this.db.collection("STATES").snapshotChanges().subscribe(res =>{
+    this.states = res;
+  })
+}
 }

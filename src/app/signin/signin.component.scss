@@ -393,8 +393,13 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
       -o-justify-content: center;
       -ms-justify-content: center; }
   
-    .form-button {
-      text-align: center; }
+    .button {
+      text-align: center; 
+      background-color: white;
+      background-color: #413e66;
+      border-radius: 15px;
+      padding: 20px;
+      width: 10;}
   
     .signin-form {
       order: 1;

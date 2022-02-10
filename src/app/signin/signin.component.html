@@ -11,16 +11,14 @@
                 </div>
 
                 <div class="signup-form">
-                    
+
                     <form class="register-form" [formGroup]="formlogin" *ngIf="login">
                         <h2 class="form-title">Sign In</h2>
 
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" formControlName="email"
-                                placeholder="Your Email" />
-                            <div *ngIf="formlog('email').invalid && (formlog('email').dirty || formlog('email').touched)"
-                                class="aleart aleart-danger">
+                            <input type="email" name="email" id="email" formControlName="email" placeholder="Your Email" />
+                            <div *ngIf="formlog('email').invalid && (formlog('email').dirty || formlog('email').touched)" class="aleart aleart-danger">
                                 <div *ngIf="formlog('email').errors?.['required']">
                                     email is required
 
@@ -31,31 +29,28 @@
                         <div class="form-group">
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="pass" id="pass" placeholder="Password" formControlName="password" />
-                            <div *ngIf="formlog('password').invalid && (formlog('password').dirty || formlog('password').touched)"
-                                class="aleart aleart-danger">
+                            <div *ngIf="formlog('password').invalid && (formlog('password').dirty || formlog('password').touched)" class="aleart aleart-danger">
                                 <div *ngIf="formlog('password').errors?.['required']">
                                     password is required
 
                                 </div>
                             </div>
                         </div>
-                        <a  class="signup-image-link" (click)="togglelogin()">Don't have an account ? SIGNUP</a>
+                        <a class="signup-image-link" (click)="togglelogin()">Don't have an account ? SIGNUP</a>
 
                         <button (click)="submit()">submit</button>
 
 
-                        
+
                     </form>
 
                     <form class="register-form" [formGroup]="formreg" *ngIf="!login">
-                        <h2 class="form-title">signup</h2>
+                        <h2 class="form-title">Sign Up</h2>
 
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" formControlName="email"
-                                placeholder="Your Email" />
-                            <div *ngIf="formlog('email').invalid && (formlog('email').dirty || formlog('email').touched)"
-                                class="aleart aleart-danger">
+                            <input type="email" name="email" id="email" formControlName="email" placeholder="Your Email" />
+                            <div *ngIf="formlog('email').invalid && (formlog('email').dirty || formlog('email').touched)" class="aleart aleart-danger">
                                 <div *ngIf="formlog('email').errors?.['required']">
                                     email is required
 
@@ -66,26 +61,25 @@
                         <div class="form-group">
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="pass" id="pass" placeholder="Password" formControlName="password" />
-                            <div *ngIf="formlog('password').invalid && (formlog('password').dirty || formlog('password').touched)"
-                                class="aleart aleart-danger">
+                            <div *ngIf="formlog('password').invalid && (formlog('password').dirty || formlog('password').touched)" class="aleart aleart-danger">
                                 <div *ngIf="formlog('password').errors?.['required']">
                                     password is required
 
                                 </div>
                             </div>
                         </div>
-                        <a  class="signup-image-link" (click)="togglelogin()">already have an account ? signin</a>
+                        <a class="signup-image-link" (click)="togglelogin()">already have an account ? signin</a>
 
                         <button (click)="submit()">submit</button>
 
 
-                        
+
                     </form>
 
-                    
+
                 </div>
 
             </div>
         </div>
     </section>
-    </div>
+</div>

@@ -1,33 +1,59 @@
-<body>
 
-    <div class="main">
-        <div class="wrap">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
+<div class="main">
+        <div class="header">
+            <div class="searchandfilter">
+                <mat-form-field>
+                    <mat-label style="font-size: 100%">
+                        State
+                    </mat-label>
+                    <mat-select [(value)]="selectedstate" style="font-size: 100%; border-bottom: none">
+                        <div class="zmdi zmdi-account" *ngFor="let s of states">
+                            <mat-option value="{{ s.payload.doc.data().Name}}" class="options">
+                                {{ s.payload.doc.data().Name }}</mat-option>
+                        </div>
+                    </mat-select>
+                </mat-form-field>
+    
+    
+    
+                <button (click)="getfilterindividual()"> filter</button>
             </div>
         </div>
-        <!--cards -->
-
-        <div class="card">
-
-            <div class="title" *ngFor ="let user of user">
+        <div class="cards">
+            <div class="card" *ngFor="let user of user">
+    
                 
-            <div class="title">
-                <a> User Name</a> 
-                <div>{{user.payload.doc.data().name}}</div>
+        
+                    <div class="title">
+                        <a> NGO Name</a>
+                        <div>{{user.payload.doc.data().name}}</div>
+                    </div>
+    
+                    <div class="title">
+                        <a> NGO TYPE</a>
+                        <div>{{user.payload.doc.data().type}}</div>
+                    </div>
+    
+                    <div class="title">
+                        <a> NGO EMAIL</a>
+                        <div>{{user.payload.doc.data().email}}</div>
+                    </div>
+                    <div class="title">
+                        <a> NGO CONTACT</a>
+                        <div>{{user.payload.doc.data().contact}}</div>
+                    </div>
+                    <div class="title">
+                        <a> NGO ADDRESS</a>
+                        <div>{{user.payload.doc.data().address}}</div>
+                    </div>
+                    <div class="title">
+                        <a> NGO STATE</a>
+                        <div>{{user.payload.doc.data().state}}</div>
+                    </div>
+        
+               
+        
             </div>
-            <div class="title">
-                <a> College Club Name</a> 
-                <div>{{user.payload.doc.data().name}}</div>
-            </div>
-
-                
-            </div>
-           
         </div>
     </div>
-    </body>
 
